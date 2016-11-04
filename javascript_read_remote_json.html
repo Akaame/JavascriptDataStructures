@@ -2,7 +2,7 @@
 <head>
 </head>
 <script type="text/javascript">
-    // TODO:get json from url
+    // TODO:get json from url DONE!
     var json_url = "https://data.cityofnewyork.us/api/views/kku6-nxdu/rows.json";
 
     function _(id){
@@ -13,16 +13,23 @@
 
         var file_content;
         xhr_remote = new XMLHttpRequest();
+        // Instantiate a XMLHttpRequest
         xhr_remote.responseType="json";
+        // set responseType property to "json"
         xhr_remote.open("GET",json_url,true);
+        // open request method = GET target = json_url async = true
         xhr_remote.onload= function(){
+                // set this callback to onload event
                 if(xhr_remote.status===200 || xhr_remote.status===0){
+                    // check the status of our request
                     file_content=xhr_remote.response;
+                    // save response into file_content
                     _("container").innerText = JSON.stringify(file_content,null,' ');
+                    // prettify dictionary using stringify and show!
                 }
         }
         xhr_remote.send();
-        
+        // send request
     }
 
 </script>
