@@ -1,0 +1,72 @@
+<html>
+<head>
+</head>
+<script type="text/javascript">
+    // TODO:get json from url
+    var json_url = "https://data.cityofnewyork.us/api/views/kku6-nxdu/rows.json";
+
+    function _(id){
+        return document.getElementById(id);
+    }
+    // get keys of any object
+    function get_object_keys(obj){
+        keys = [];
+        // declare a array
+        for(i in obj){
+            // for loop over an object i => key obj[i] => val
+            keys.push(i);
+            // append i
+        }
+        return keys;
+    }
+
+    // We can now add child when clicked yet cannot get tree structure
+    // We need collections like stacks, queues and trees
+    function create_paragraphs(dict,currentDict){
+        var arr = get_object_keys(currentDict);
+        // get current keys
+        for(i in arr){
+            var p = document.createElement("p");
+            // create a p element
+            var text = document.createTextNode(arr[i]);
+            // create a tagless text
+            p.appendChild(text);
+            // make this text child of p jQuery append
+            p.onclick = function(){setKeys(arr[i],dict,currentDict)};
+            // set an onclick handler to p
+            _("container").appendChild(p);
+            // render p on screeen
+        }
+    }
+
+    function setKeys(index,dict,currentDict){
+        var ncurrentDict=currentDict[index];
+        create_paragraphs(dict,ncurrentDict);
+    }
+
+    function main(){
+
+        var file_content;
+        xhr_remote = new XMLHttpRequest();
+        xhr_remote.responseType="json";
+        xhr_remote.open("GET",json_url,true);
+        xhr_remote.onload= function(){
+                if(xhr_remote.status===200 || xhr_remote.status===0){
+                    file_content=xhr_remote.response;
+                    create_paragraphs(file_content,file_content);
+                }
+        }
+        xhr_remote.send();
+
+    }
+
+</script>
+
+<body onload="main()">
+<div id="container">
+
+</div>
+<div id="test">
+</div>
+</body>
+</html>

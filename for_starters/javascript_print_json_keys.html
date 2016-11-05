@@ -1,0 +1,49 @@
+<html>
+<head>
+</head>
+<script type="text/javascript">
+    // TODO:get json from url
+    var json_url = "https://data.cityofnewyork.us/api/views/kku6-nxdu/rows.json";
+
+    function _(id){
+        return document.getElementById(id);
+    }
+    // get keys of any object
+    function get_object_keys(obj){
+        keys = [];
+        // declare a array
+        for(i in obj){
+            // for loop over an object i => key obj[i] => val
+            keys.push(i);
+            // append i
+        }
+        return keys;
+    }
+    function main(){
+
+        var file_content;
+        xhr_remote = new XMLHttpRequest();
+        xhr_remote.responseType="json";
+        xhr_remote.open("GET",json_url,true);
+        xhr_remote.onload= function(){
+                if(xhr_remote.status===200 || xhr_remote.status===0){
+                    file_content=xhr_remote.response;
+                    var keys = get_object_keys(file_content);
+                    _("test").innerText = typeof keys;
+                    _("container").innerText = JSON.stringify(keys);
+                }
+        }
+        xhr_remote.send();
+
+    }
+
+</script>
+
+<body onload="main()">
+<div id="container">
+
+</div>
+<div id="test">
+</div>
+</body>
+</html>
