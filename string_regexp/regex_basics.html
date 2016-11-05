@@ -1,0 +1,35 @@
+<html>
+<head>
+    <script type="text/javascript">
+            function _(id){
+                return document.getElementById(id);
+            }
+            function input_validation(text){
+                // text => the html element that fired ehis event
+                var regexp = new RegExp("abc");
+                var result = regexp.test(text.value);
+                // get value and test it
+
+                var p = document.createElement("p");
+                var inner_text = document.createTextNode( str = (result==1) ? "Match" : "No match");
+                p.appendChild(inner_text);
+                document.body.appendChild(p);
+                // add result to the body
+            }
+
+            function input_validation_brute(text){
+                var regexp = new RegExp("abc");
+                var result = regexp.test(text.value);
+
+                _("result").innerText = (result==1) ? "Match" : "No match";
+                // change result paragraph's innerText
+            }
+
+    </script>
+</head>
+<body>
+<p id="result"></p>
+<input type="text" name="text" value=" " onchange="input_validation_brute(this)">
+
+</body>
+</html>

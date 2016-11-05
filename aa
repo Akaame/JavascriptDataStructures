@@ -1,0 +1,26 @@
+// http://stackoverflow.com/questions/2534803/string-format-in-javascript
+// TODO: common regex in js e-mail, IP
+// username cannot have these chars ->
+// password needs one uppercase, number kind of stuff
+// regex basics
+
+// TODO: drag and drop
+
+// TODO: canvas draw images and get mouse click events
+// TODO: implement primitive linspace and join lines maybe draw ticks
+
+// TODO: implement a forEach method for collection class
+
+
+// TODO: html canvas and js game DONE
+// TODO: study class creation via Constructor DONE
+// TODO: study combined class definition DONE
+// TODO: private/public member of class DONE
+// Any variables defined via var or normal function definitons are private
+// this or prototype => public
+// TODO: study default parameters DONE check if undefined via ternary operator
+//function foo(a, b)
+//{
+//  a = typeof a !== 'undefined' ? a : 42;
+//  b = typeof b !== 'undefined' ? b : 'default_b';
+//}
