@@ -1,17 +1,3 @@
-// TODO: study class creation via Constructor DONE
-// TODO: study combined class definition DONE
-// TODO: private/public member of class DONE
-// Any variables defined via var or normal function definitons are private
-// this or prototype => public
-// TODO: study default parameters DONE check if undefined via ternary operator
-//function foo(a, b)
-//{
-//  a = typeof a !== 'undefined' ? a : 42;
-//  b = typeof b !== 'undefined' ? b : 'default_b';
-//}
-// TODO: study RegExp js form validation
-// TODO: drag and drop
-// TODO: html canvas and js game
 
 // Constructor part
 function Collection(name){

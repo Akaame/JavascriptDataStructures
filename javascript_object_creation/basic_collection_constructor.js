@@ -19,7 +19,6 @@ function Collection(name){
 
     this.add = function(K,V){
         if(this.collection[K]!=undefined){
-            // is it possible to do like this.collection.K ?
             return undefined;
         }
         this.collection[K] = V;

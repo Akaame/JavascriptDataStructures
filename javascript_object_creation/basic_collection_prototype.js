@@ -1,5 +1,4 @@
 
-
 function Collection(){
 
     Collection.prototype.count = 0;
@@ -17,7 +16,6 @@ function Collection(){
 
     Collection.prototype.add = function(K,V){
         if(this.collection[K]!=undefined){
-            // is it possible to do like this.collection.K ?
             return undefined;
         }
         this.collection[K] = V;
